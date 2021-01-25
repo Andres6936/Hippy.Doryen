@@ -43,6 +43,17 @@ int main()
 	{
 		console.clear();
 
+		const KeyCode key = console.getKeyPressed().getKeyCode();
+
+		if (key == KeyCode::ENTER)
+		{
+			HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED, DirectionRTL);
+		}
+		else if (key == KeyCode::SPACE)
+		{
+			HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED, DirectionLTR);
+		}
+
 		DrawNode(root, console, {127, 127, 127});
 		DrawNode(root_child0, console, {255, 255, 0});
 
