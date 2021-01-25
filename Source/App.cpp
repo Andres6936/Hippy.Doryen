@@ -35,8 +35,16 @@ int main()
 
 	const HPNodeRef root_child0 = HPNodeNew();
 	HPNodeStyleSetMargin(root_child0, CSSStart, 10);
-	HPNodeStyleSetWidth(root_child0, 10);
+	HPNodeStyleSetWidth(root_child0, 50);
+	HPNodeStyleSetHeight(root_child0, 50);
 	HPNodeInsertChild(root, root_child0, 0);
+	HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
+
+	const HPNodeRef root_child1 = HPNodeNew();
+	HPNodeStyleSetMargin(root_child1, CSSStart, 10);
+	HPNodeStyleSetWidth(root_child1, 20);
+	HPNodeStyleSetHeight(root_child1, 20);
+	HPNodeInsertChild(root, root_child1, 1);
 	HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
 	while (console.isRunning())
@@ -56,6 +64,7 @@ int main()
 
 		DrawNode(root, console, {127, 127, 127});
 		DrawNode(root_child0, console, {255, 255, 0});
+		DrawNode(root_child1, console, {255, 0, 0});
 
 		console.draw();
 	}
