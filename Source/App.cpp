@@ -29,22 +29,36 @@ int main()
 	console.setFramePerSeconds(24);
 
 	const HPNodeRef root = HPNodeNew();
-	HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
 	HPNodeStyleSetWidth(root, 100);
 	HPNodeStyleSetHeight(root, 100);
+	HPNodeStyleSetAlignItems(root, FlexAlignStart);
 
-	const HPNodeRef root_child0 = HPNodeNew();
-	HPNodeStyleSetMargin(root_child0, CSSStart, 10);
-	HPNodeStyleSetWidth(root_child0, 50);
-	HPNodeStyleSetHeight(root_child0, 50);
-	HPNodeInsertChild(root, root_child0, 0);
-	HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
+	const HPNodeRef wrapper = HPNodeNew();
+	HPNodeStyleSetWidth(wrapper, 80);
+	HPNodeStyleSetHeight(wrapper, 100);
+	HPNodeInsertChild(root, wrapper, 0);
+	HPNodeStyleSetFlexWrap(wrapper, FlexWrap);
 
 	const HPNodeRef root_child1 = HPNodeNew();
-	HPNodeStyleSetMargin(root_child1, CSSStart, 10);
-	HPNodeStyleSetWidth(root_child1, 20);
-	HPNodeStyleSetHeight(root_child1, 20);
-	HPNodeInsertChild(root, root_child1, 1);
+	HPNodeStyleSetWidth(root_child1, 80);
+	HPNodeStyleSetHeight(root_child1, 50);
+	HPNodeStyleSetFlexGrow(root_child1, 1);
+	HPNodeStyleSetFlexShrink(root_child1, 1);
+	HPNodeStyleSetFlexWrap(root_child1, FlexWrap);
+	HPNodeInsertChild(wrapper, root_child1, 0);
+
+	const HPNodeRef root_child2 = HPNodeNew();
+	HPNodeStyleSetWidth(root_child2, 80);
+	HPNodeStyleSetHeight(root_child2, 50);
+	HPNodeStyleSetFlexGrow(root_child2, 1);
+	HPNodeStyleSetFlexWrap(root_child2, FlexWrap);
+	HPNodeInsertChild(wrapper, root_child2, 1);
+
+	const HPNodeRef lastElement = HPNodeNew();
+	HPNodeStyleSetWidth(lastElement, 20);
+	HPNodeStyleSetHeight(lastElement, 100);
+	HPNodeInsertChild(root, lastElement, 1);
+
 	HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
 
 	while (console.isRunning())
@@ -63,8 +77,10 @@ int main()
 		}
 
 		DrawNode(root, console, {127, 127, 127});
-		DrawNode(root_child0, console, {255, 255, 0});
+		DrawNode(wrapper, console, { 255, 255, 0});
 		DrawNode(root_child1, console, {255, 0, 0});
+		DrawNode(root_child2, console, {0, 255, 0});
+		DrawNode(lastElement, console, {0, 0, 255});
 
 		console.draw();
 	}
