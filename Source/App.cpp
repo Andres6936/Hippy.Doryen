@@ -18,7 +18,7 @@ void DrawNode(HPNodeRef node, Console& console, const Color& background)
 	{
 		for(std::size_t startY = topCorner; startY < endY; startY += 1)
 		{
-			console.writeChar(startX, startY, '0', {0, 0, 0}, background);
+			console.writeChar(startX, startY, 178, {0, 0, 0}, background);
 		}
 	}
 }
