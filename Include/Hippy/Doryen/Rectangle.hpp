@@ -49,13 +49,20 @@ namespace Doryen::Geometry
 		// Constructs
 
 		/**
+		 * Constructs a new Rectangle whose upper-left corner is at (0, 0) in
+		 * the coordinate space, and whose width and height are both zero.
+		 */
+		Rectangle() noexcept = default;
+
+
+		/**
 		 * Initializes a new instance of the Rectangle class with the specified
 		 * location and size.
 		 *
 		 * @param point A Point that represents the upper-left corner of the rectangular region.
 		 * @param size A Size that represents the width and height of the rectangular region.
 		 */
-		Rectangle(const Point2D<>& point, const Size& size)
+		Rectangle(const Point2D<>& point, const Size& size) noexcept
 			: x(point.x), y(point.y), width(size.w), height(size.h)
 		{
 
@@ -70,7 +77,7 @@ namespace Doryen::Geometry
 		 * @param _w The width of the rectangle.
 		 * @param _h The height of the rectangle.
 		 */
-		Rectangle(std::int32_t _x, std::int32_t _y, std::int32_t _w, std::int32_t _h)
+		Rectangle(std::int32_t _x, std::int32_t _y, std::int32_t _w, std::int32_t _h) noexcept
 			: x(_x), y(_y), width(_w), height(_h)
 		{
 
