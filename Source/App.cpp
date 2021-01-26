@@ -33,34 +33,40 @@ int main()
 	HPNodeStyleSetHeight(root, 100);
 	HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
 	HPNodeStyleSetAlignItems(root, FlexAlignStart);
+	HPNodeDoLayout(root, 100, 100, DirectionLTR);
+
+//	HPNodePrint(root);
 
 	const HPNodeRef wrapper = HPNodeNew();
 	HPNodeStyleSetWidth(wrapper, 80);
-	HPNodeStyleSetHeight(wrapper, 100);
+	HPNodeStyleSetHeight(wrapper, HPNodeLayoutGetHeight(root) * 1.0f);
+//	HPNodeDoLayout(wrapper, 80, HPNodeLayoutGetHeight(root), DirectionInherit);
 	HPNodeInsertChild(root, wrapper, 0);
-	HPNodeStyleSetFlexWrap(wrapper, FlexWrap);
+
+//	HPNodePrint(wrapper);
 
 	const HPNodeRef root_child1 = HPNodeNew();
 	HPNodeStyleSetWidth(root_child1, 80);
-	HPNodeStyleSetHeight(root_child1, 50);
 	HPNodeStyleSetFlexGrow(root_child1, 1);
-	HPNodeStyleSetFlexShrink(root_child1, 1);
-	HPNodeStyleSetFlexWrap(root_child1, FlexWrap);
 	HPNodeInsertChild(wrapper, root_child1, 0);
 
 	const HPNodeRef root_child2 = HPNodeNew();
 	HPNodeStyleSetWidth(root_child2, 80);
-	HPNodeStyleSetHeight(root_child2, 50);
 	HPNodeStyleSetFlexGrow(root_child2, 1);
-	HPNodeStyleSetFlexWrap(root_child2, FlexWrap);
 	HPNodeInsertChild(wrapper, root_child2, 1);
 
 	const HPNodeRef lastElement = HPNodeNew();
 	HPNodeStyleSetWidth(lastElement, 20);
-	HPNodeStyleSetHeight(lastElement, 100);
+	HPNodeStyleSetHeight(lastElement, HPNodeLayoutGetHeight(root) * 1.0f);
+//	HPNodeDoLayout(lastElement, 20, HPNodeLayoutGetHeight(root), DirectionInherit);
 	HPNodeInsertChild(root, lastElement, 1);
 
-	HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED);
+//	HPNodePrint(lastElement);
+
+	HPNodeDoLayout(root, 100, 100, DirectionLTR);
+	HPNodeDoLayout(wrapper, HPNodeLayoutGetWidth(root), HPNodeLayoutGetHeight(root), DirectionInherit);
+
+	HPNodePrint(root);
 
 	while (console.isRunning())
 	{
@@ -71,10 +77,12 @@ int main()
 		if (key == KeyCode::ENTER)
 		{
 			HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED, DirectionRTL);
+			HPNodePrint(root);
 		}
 		else if (key == KeyCode::SPACE)
 		{
 			HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED, DirectionLTR);
+			HPNodePrint(root);
 		}
 
 		DrawNode(root, console, {127, 127, 127});
