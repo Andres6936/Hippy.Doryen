@@ -108,6 +108,48 @@ namespace Doryen::Geometry
 			return height;
 		}
 
+		/**
+		 * @return Gets the y-coordinate of the top edge of this Rectangle structure.
+		 */
+		std::int32_t getTop() const noexcept
+		{
+			return y;
+		}
+
+		/**
+		 * @return Gets the x-coordinate of the left edge of this Rectangle structure.
+		 */
+		std::int32_t getLeft() const noexcept
+		{
+			return x;
+		}
+
+		/**
+		 * @note The value of the Right property represents the x-coordinate of
+		 * the first point at the right edge of the rectangle that is not
+		 * contained in the rectangle.
+		 *
+		 * @return Gets the x-coordinate that is the sum of X and Width property
+		 * values of this Rectangle structure.
+		 */
+		std::int32_t getRight() const noexcept
+		{
+			return x + width;
+		}
+
+		/**
+		 * @note The value of the Bottom property represents the y-coordinate of
+		 * the first point at the bottom edge of the Rectangle that is not
+		 * contained in the Rectangle.
+		 *
+		 * @return Gets the y-coordinate that is the sum of the Y and Height
+		 * property values of this Rectangle structure.
+		 */
+		std::int32_t getBottom() const noexcept
+		{
+			return y + height;
+		}
+
 	};
 
 }
