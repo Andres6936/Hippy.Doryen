@@ -25,10 +25,13 @@ ADD_LIBRARY(Hippy::Doryen ALIAS Hippy.Doryen)
 TARGET_INCLUDE_DIRECTORIES(Hippy.Doryen INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/Include>)
 # Support to compiler on mode C++ 17 standard.
 TARGET_COMPILE_FEATURES(Hippy.Doryen INTERFACE cxx_std_17)
+# Needed the Doryen Framework because it is used in the header, needed mark PUBLIC
+# the link to library, but Hippy.Doryen it is a INTERFACE so that is most important
+# mark INTERFACE over PUBLIC
+TARGET_LINK_LIBRARIES(Hippy.Doryen INTERFACE Doryen::Framework)
 
 ADD_EXECUTABLE(Hippy.Doryen.App Source/App.cpp)
 SET_TARGET_PROPERTIES(Hippy.Doryen.App PROPERTIES CXX_STANDARD 17)
-TARGET_LINK_LIBRARIES(Hippy.Doryen.App PRIVATE Doryen::Framework)
 TARGET_LINK_LIBRARIES(Hippy.Doryen.App PRIVATE Hippy::Doryen)
 TARGET_LINK_LIBRARIES(Hippy.Doryen.App PRIVATE Hippy::Flex)
 
