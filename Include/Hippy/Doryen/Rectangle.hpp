@@ -14,6 +14,30 @@ namespace Doryen::Geometry
 	/**
 	 * @brief Stores a set of four integers that represent the location and size
 	 * of a rectangle.
+	 *
+	 * A Rectangle specifies an area in a coordinate space that is enclosed by
+	 * the Rectangle object's upper-left point (x,y) in the coordinate space,
+	 * its width, and its height.
+	 *
+	 * A Rectangle object's width and height are private fields. The
+	 * constructors that create a Rectangle, and the methods that can modify
+	 * one, do not prevent setting a negative value for width or height.
+	 *
+	 * A Rectangle whose width or height is exactly zero has location along
+	 * those axes with zero dimension, but is otherwise considered empty.
+	 *
+	 * Methods which affect only the location of a Rectangle will operate on its
+	 * location regardless of whether or not it has a negative or zero dimension
+	 * along either axis.
+	 *
+	 * Note that a Rectangle constructed with the default no-argument
+	 * constructor will have dimensions of 0x0 and therefore be empty. That
+	 * Rectangle will still have a location of (0,0) and will contribute that
+	 * location to the union and add operations.
+	 *
+	 * This class uses 32-bit integers to store its location and dimensions.
+	 * Frequently operations may produce a result that exceeds the range of a
+	 * 32-bit integer.
 	 */
 	class Rectangle
 	{
