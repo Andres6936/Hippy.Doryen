@@ -35,15 +35,10 @@ int main()
 	HPNodeStyleSetAlignItems(root, FlexAlignStart);
 	HPNodeDoLayout(root, 100.0f, 100.0f, DirectionLTR);
 
-//	HPNodePrint(root);
-
 	const HPNodeRef wrapper = HPNodeNew();
 	HPNodeStyleSetWidth(wrapper, 80.0f);
 	HPNodeStyleSetHeight(wrapper, HPNodeLayoutGetHeight(root) * 1.0f);
-//	HPNodeDoLayout(wrapper, 80, HPNodeLayoutGetHeight(root), DirectionInherit);
 	HPNodeInsertChild(root, wrapper, 0);
-
-//	HPNodePrint(wrapper);
 
 	const HPNodeRef root_child1 = HPNodeNew();
 	HPNodeStyleSetWidth(root_child1, 80.0f);
@@ -58,10 +53,7 @@ int main()
 	const HPNodeRef lastElement = HPNodeNew();
 	HPNodeStyleSetWidth(lastElement, 20.0f);
 	HPNodeStyleSetHeight(lastElement, HPNodeLayoutGetHeight(root) * 1.0f);
-//	HPNodeDoLayout(lastElement, 20, HPNodeLayoutGetHeight(root), DirectionInherit);
 	HPNodeInsertChild(root, lastElement, 1);
-
-//	HPNodePrint(lastElement);
 
 	HPNodeDoLayout(root, 100.0f, 100.0f, DirectionLTR);
 	HPNodeDoLayout(wrapper, HPNodeLayoutGetWidth(root), HPNodeLayoutGetHeight(root), DirectionInherit);
