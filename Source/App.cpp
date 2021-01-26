@@ -29,16 +29,16 @@ int main()
 	console.setFramePerSeconds(24);
 
 	const HPNodeRef root = HPNodeNew();
-	HPNodeStyleSetWidth(root, 100);
-	HPNodeStyleSetHeight(root, 100);
+	HPNodeStyleSetWidth(root, 100.0f);
+	HPNodeStyleSetHeight(root, 100.0f);
 	HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
 	HPNodeStyleSetAlignItems(root, FlexAlignStart);
-	HPNodeDoLayout(root, 100, 100, DirectionLTR);
+	HPNodeDoLayout(root, 100.0f, 100.0f, DirectionLTR);
 
 //	HPNodePrint(root);
 
 	const HPNodeRef wrapper = HPNodeNew();
-	HPNodeStyleSetWidth(wrapper, 80);
+	HPNodeStyleSetWidth(wrapper, 80.0f);
 	HPNodeStyleSetHeight(wrapper, HPNodeLayoutGetHeight(root) * 1.0f);
 //	HPNodeDoLayout(wrapper, 80, HPNodeLayoutGetHeight(root), DirectionInherit);
 	HPNodeInsertChild(root, wrapper, 0);
@@ -46,24 +46,24 @@ int main()
 //	HPNodePrint(wrapper);
 
 	const HPNodeRef root_child1 = HPNodeNew();
-	HPNodeStyleSetWidth(root_child1, 80);
-	HPNodeStyleSetFlexGrow(root_child1, 1);
+	HPNodeStyleSetWidth(root_child1, 80.0f);
+	HPNodeStyleSetFlexGrow(root_child1, 1.0f);
 	HPNodeInsertChild(wrapper, root_child1, 0);
 
 	const HPNodeRef root_child2 = HPNodeNew();
-	HPNodeStyleSetWidth(root_child2, 80);
-	HPNodeStyleSetFlexGrow(root_child2, 1);
+	HPNodeStyleSetWidth(root_child2, 80.0f);
+	HPNodeStyleSetFlexGrow(root_child2, 1.0f);
 	HPNodeInsertChild(wrapper, root_child2, 1);
 
 	const HPNodeRef lastElement = HPNodeNew();
-	HPNodeStyleSetWidth(lastElement, 20);
+	HPNodeStyleSetWidth(lastElement, 20.0f);
 	HPNodeStyleSetHeight(lastElement, HPNodeLayoutGetHeight(root) * 1.0f);
 //	HPNodeDoLayout(lastElement, 20, HPNodeLayoutGetHeight(root), DirectionInherit);
 	HPNodeInsertChild(root, lastElement, 1);
 
 //	HPNodePrint(lastElement);
 
-	HPNodeDoLayout(root, 100, 100, DirectionLTR);
+	HPNodeDoLayout(root, 100.0f, 100.0f, DirectionLTR);
 	HPNodeDoLayout(wrapper, HPNodeLayoutGetWidth(root), HPNodeLayoutGetHeight(root), DirectionInherit);
 
 	HPNodePrint(root);
