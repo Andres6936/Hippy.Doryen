@@ -20,6 +20,8 @@ namespace Doryen::Geometry
 
 	private:
 
+		// Properties
+
 		/**
 		 * The x-coordinate of the upper-left corner of this Rectangle structure.
 		 * The default is 0.
@@ -43,6 +45,8 @@ namespace Doryen::Geometry
 		std::int32_t height {0};
 
 	public:
+
+		// Constructs
 
 		/**
 		 * Initializes a new instance of the Rectangle class with the specified
