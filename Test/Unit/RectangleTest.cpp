@@ -80,3 +80,17 @@ TEST_CASE("Verify that property Top and Bottom change when the Y property change
 	// The property Height not change, is 6.
 	CHECK(rectangle.getBottom() == 29);
 }
+
+TEST_CASE("Verify that property Left and Right change when the X property change")
+{
+	Rectangle rectangle {6, 9, 3, 6};
+
+	CHECK(rectangle.getLeft() == 6);
+	CHECK(rectangle.getRight() == 9);
+
+	rectangle.setX(23);
+
+	CHECK(rectangle.getLeft() == 23);
+	// The property Width not change, is 3.
+	CHECK(rectangle.getRight() == 26);
+}
