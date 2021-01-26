@@ -1,0 +1,1 @@
+HIPPY_DORYEN_TEST_UNIT(Hippy.Doryen.Test.Rectangle RectangleTest.cpp)
