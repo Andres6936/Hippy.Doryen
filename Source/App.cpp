@@ -31,6 +31,7 @@ int main()
 	const HPNodeRef root = HPNodeNew();
 	HPNodeStyleSetWidth(root, 100);
 	HPNodeStyleSetHeight(root, 100);
+	HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
 	HPNodeStyleSetAlignItems(root, FlexAlignStart);
 
 	const HPNodeRef wrapper = HPNodeNew();
