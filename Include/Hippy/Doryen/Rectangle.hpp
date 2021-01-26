@@ -161,6 +161,60 @@ namespace Doryen::Geometry
 			return y + height;
 		}
 
+		// Setters
+
+		/**
+		 * Sets the x-coordinate of the upper-left corner of this Rectangle structure.
+		 *
+		 * @note Changing the X property will also cause a change in the Right
+		 * property of the Rectangle.
+		 *
+		 * @param _x The x-coordinate of the upper-left corner of this Rectangle structure.
+		 */
+		void setX(const std::int32_t _x) noexcept
+		{
+			this->x = _x;
+		}
+
+		/**
+		 * Sets the y-coordinate of the upper-left corner of this Rectangle structure.
+		 *
+		 * @note Changing the Y property will also cause a change in the Bottom
+		 * property of the Rectangle.
+		 *
+		 * @param _y The y-coordinate of the upper-left corner of this Rectangle structure.
+		 */
+		void setY(const std::int32_t _y) noexcept
+		{
+			this->y = _y;
+		}
+
+		/**
+		 * Sets the width of this Rectangle structure.
+		 *
+		 * @note Changing the Width property will also cause a change in the
+		 * Right property of the Rectangle.
+		 *
+		 * @param _width The width of this Rectangle structure.
+		 */
+		void setWidth(const std::int32_t _width) noexcept
+		{
+			this->width = _width;
+		}
+
+		/**
+		 * Sets the height of this Rectangle structure.
+		 *
+		 * @note Changing the Height property will also cause a change in the
+		 * Bottom property of the Rectangle.
+		 *
+		 * @param _height The height of this Rectangle structure.
+		 */
+		void setHeight(const std::int32_t _height) noexcept
+		{
+			this->height = _height;
+		}
+
 	};
 
 }
