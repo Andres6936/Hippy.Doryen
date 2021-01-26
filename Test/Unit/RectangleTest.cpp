@@ -66,3 +66,17 @@ TEST_CASE("Verify the change of properties with setters")
 	CHECK(rectangle.getWidth() == 10);
 	CHECK(rectangle.getHeight() == 6);
 }
+
+TEST_CASE("Verify that property Top and Bottom change when the Y property change")
+{
+	Rectangle rectangle {6, 9, 3, 6};
+
+	CHECK(rectangle.getTop() == 9);
+	CHECK(rectangle.getBottom() == 15);
+
+	rectangle.setY(23);
+
+	CHECK(rectangle.getTop() == 23);
+	// The property Height not change, is 6.
+	CHECK(rectangle.getBottom() == 29);
+}
