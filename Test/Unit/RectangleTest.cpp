@@ -7,7 +7,7 @@
 
 using namespace Doryen::Geometry;
 
-TEST_CASE("Rectangle class is initialized to 0 for default.")
+TEST_CASE("Verify that Rectangle class is initialized to 0 for default.")
 {
 	const Rectangle rectangle {};
 
@@ -50,4 +50,19 @@ TEST_CASE("Verify the construction of Rectangle with parameters Point and Size")
 	CHECK(rectangle.getLeft() == 6);
 	CHECK(rectangle.getRight() == 9);
 	CHECK(rectangle.getBottom() == 15);
+}
+
+TEST_CASE("Verify the change of properties with setters")
+{
+	Rectangle rectangle {};
+
+	rectangle.setX(9);
+	rectangle.setY(7);
+	rectangle.setWidth(10);
+	rectangle.setHeight(6);
+
+	CHECK(rectangle.getX() == 9);
+	CHECK(rectangle.getY() == 7);
+	CHECK(rectangle.getWidth() == 10);
+	CHECK(rectangle.getHeight() == 6);
 }
