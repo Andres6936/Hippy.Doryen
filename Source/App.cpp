@@ -56,7 +56,6 @@ int main()
 	HPNodeInsertChild(root, lastElement, 1);
 
 	HPNodeDoLayout(root, 100.0f, 100.0f, DirectionLTR);
-	HPNodeDoLayout(wrapper, HPNodeLayoutGetWidth(root), HPNodeLayoutGetHeight(root), DirectionInherit);
 
 	HPNodePrint(root);
 
