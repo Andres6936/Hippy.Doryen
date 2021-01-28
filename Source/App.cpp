@@ -33,19 +33,19 @@ int main()
 	root.setFlexDirection(FLexDirectionRow);
 	root.setAlignItems(FlexAlignStart);
 
-	Hippy::Frame wrapper { root };
+	Hippy::Frame wrapper { &root };
 	wrapper.setWidth(80);
 	wrapper.setHeight(root.getHeight() * 1.0f);
 
-	Hippy::Frame root_child1 { wrapper };
+	Hippy::Frame root_child1 { &wrapper };
 	root_child1.setWidth(80.f);
 	root_child1.setFlexGrow(1.0f);
 
-	Hippy::Frame root_child2 { wrapper };
+	Hippy::Frame root_child2 { &wrapper };
 	root_child2.setWidth(80.0f);
 	root_child2.setFlexGrow(1.0f);
 
-	Hippy::Frame lastElement { root };
+	Hippy::Frame lastElement { &root };
 	lastElement.setWidth(20.0f);
 	lastElement.setHeight( root.getHeight() * 1.0f );
 

@@ -11,11 +11,13 @@ namespace Hippy
 	class Layoutable
 	{
 
-	private:
+	protected:
 
 		// Definitions
 
 		using LayoutableView = Layoutable*;
+
+	private:
 
 		// Properties
 

@@ -13,6 +13,8 @@ namespace Hippy
 
 	public:
 
+		Frame( const LayoutableView parent);
+
 		Frame(const float width, const float height);
 
 	};
