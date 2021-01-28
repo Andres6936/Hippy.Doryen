@@ -1,15 +1,16 @@
 #include <Doryen/Doryen.hpp>
 #include <Hippy/Flex/Hippy.h>
+#include <Hippy/Doryen/Frame.hpp>
 
 using namespace Doryen;
 
-void DrawNode(HPNodeRef node, Console& console, const Color& background)
+void DrawNode(Hippy::Frame& node, Console& console, const Color& background)
 {
-	const unsigned int leftCorner = HPNodeLayoutGetLeft(node);
-	const unsigned int topCorner = HPNodeLayoutGetTop(node);
+	const unsigned int leftCorner = node.getLeft();
+	const unsigned int topCorner = node.getTop();
 
-	const unsigned int widthRoot = HPNodeLayoutGetWidth(node);
-	const unsigned int heightRoot = HPNodeLayoutGetHeight(node);
+	const unsigned int widthRoot = node.getWidth();
+	const unsigned int heightRoot = node.getHeight();
 
 	const unsigned int endX = std::clamp((unsigned) widthRoot + leftCorner, 0u, console.getWidth());
 	const unsigned int endY = std::clamp((unsigned) heightRoot + topCorner, 0u, console.getWidth());
@@ -28,36 +29,27 @@ int main()
 	Console console {100, 100};
 	console.setFramePerSeconds(24);
 
-	const HPNodeRef root = HPNodeNew();
-	HPNodeStyleSetWidth(root, 100.0f);
-	HPNodeStyleSetHeight(root, 100.0f);
-	HPNodeStyleSetFlexDirection(root, FLexDirectionRow);
-	HPNodeStyleSetAlignItems(root, FlexAlignStart);
-	HPNodeDoLayout(root, 100.0f, 100.0f, DirectionLTR);
+	Hippy::Frame root {100, 100};
+	root.setFlexDirection(FLexDirectionRow);
+	root.setAlignItems(FlexAlignStart);
 
-	const HPNodeRef wrapper = HPNodeNew();
-	HPNodeStyleSetWidth(wrapper, 80.0f);
-	HPNodeStyleSetHeight(wrapper, HPNodeLayoutGetHeight(root) * 1.0f);
-	HPNodeInsertChild(root, wrapper, 0);
+	Hippy::Frame wrapper { root };
+	wrapper.setWidth(80);
+	wrapper.setHeight(root.getHeight() * 1.0f);
 
-	const HPNodeRef root_child1 = HPNodeNew();
-	HPNodeStyleSetWidth(root_child1, 80.0f);
-	HPNodeStyleSetFlexGrow(root_child1, 1.0f);
-	HPNodeInsertChild(wrapper, root_child1, 0);
+	Hippy::Frame root_child1 { wrapper };
+	root_child1.setWidth(80.f);
+	root_child1.setFlexGrow(1.0f);
 
-	const HPNodeRef root_child2 = HPNodeNew();
-	HPNodeStyleSetWidth(root_child2, 80.0f);
-	HPNodeStyleSetFlexGrow(root_child2, 1.0f);
-	HPNodeInsertChild(wrapper, root_child2, 1);
+	Hippy::Frame root_child2 { wrapper };
+	root_child2.setWidth(80.0f);
+	root_child2.setFlexGrow(1.0f);
 
-	const HPNodeRef lastElement = HPNodeNew();
-	HPNodeStyleSetWidth(lastElement, 20.0f);
-	HPNodeStyleSetHeight(lastElement, HPNodeLayoutGetHeight(root) * 1.0f);
-	HPNodeInsertChild(root, lastElement, 1);
+	Hippy::Frame lastElement { root };
+	lastElement.setWidth(20.0f);
+	lastElement.setHeight( root.getHeight() * 1.0f );
 
-	HPNodeDoLayout(root, 100.0f, 100.0f, DirectionLTR);
-
-	HPNodePrint(root);
+	root.printNode();
 
 	while (console.isRunning())
 	{
@@ -67,13 +59,13 @@ int main()
 
 		if (key == KeyCode::ENTER)
 		{
-			HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED, DirectionRTL);
-			HPNodePrint(root);
+//			HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED, DirectionRTL);
+//			HPNodePrint(root);
 		}
 		else if (key == KeyCode::SPACE)
 		{
-			HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED, DirectionLTR);
-			HPNodePrint(root);
+//			HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED, DirectionLTR);
+//			HPNodePrint(root);
 		}
 
 		DrawNode(root, console, {127, 127, 127});
@@ -85,6 +77,6 @@ int main()
 		console.draw();
 	}
 
-	HPNodeFreeRecursive(root);
+//	HPNodeFreeRecursive(root);
 }
 

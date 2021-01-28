@@ -1,5 +1,5 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.14)
-PROJECT(Hippy.Doryen)
+PROJECT(Hippy)
 
 INCLUDE(CMakeModules/CPM.cmake)
 
@@ -30,7 +30,10 @@ TARGET_COMPILE_FEATURES(Hippy.Doryen INTERFACE cxx_std_17)
 # mark INTERFACE over PUBLIC
 TARGET_LINK_LIBRARIES(Hippy.Doryen INTERFACE Doryen::Framework)
 
-ADD_EXECUTABLE(Hippy.Doryen.App Source/App.cpp)
+ADD_EXECUTABLE(Hippy.Doryen.App
+        Source/App.cpp
+        Source/Frame.cpp
+        Source/Layoutable.cpp)
 SET_TARGET_PROPERTIES(Hippy.Doryen.App PROPERTIES CXX_STANDARD 17)
 TARGET_LINK_LIBRARIES(Hippy.Doryen.App PRIVATE Hippy::Doryen)
 TARGET_LINK_LIBRARIES(Hippy.Doryen.App PRIVATE Hippy::Flex)
