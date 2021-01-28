@@ -39,6 +39,8 @@ namespace Hippy
 
 		void printNode();
 
+		void recalculate();
+
 		void insertChild(const Layoutable& child);
 
 		// Setters

@@ -27,6 +27,13 @@ void Layoutable::printNode()
 	HPNodePrint(layout);
 }
 
+void Layoutable::recalculate()
+{
+	// The code layout->style.dim[0] store the style width of node.
+	// The code layout->style.dim[1] store the style height of node.
+	HPNodeDoLayout(layout, layout->style.dim[0], layout->style.dim[1], DirectionLTR);
+}
+
 void Layoutable::insertChild(const Layoutable& child)
 {
 	HPNodeInsertChild(layout, child.layout, totalsChildInserted);
