@@ -8,9 +8,9 @@ using namespace Hippy;
 
 Layoutable::Layoutable(const LayoutableView _parent) : parent(_parent)
 {
-	HPNodeInsertChild(parent->layout, this->layout, totalsChildInserted);
+	HPNodeInsertChild(parent->layout, this->layout, parent->totalsChildInserted);
 	// Increment the numbers of child inserted.
-	totalsChildInserted += 1;
+	parent->totalsChildInserted += 1;
 }
 
 Layoutable::Layoutable(const float width, const float height)
