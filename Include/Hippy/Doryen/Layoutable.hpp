@@ -165,18 +165,9 @@ namespace Hippy
 		void printNode();
 
 		/**
-		 * Validate the component metrics. The method is called as a one step of
-		 * the component validation procedure. The method causes "recalc" method
-		 * execution if the method has been implemented and the component is in
-		 * invalid state. It is supposed the "recalc" method has to be
-		 * implemented by a component as safe place where the component metrics
-		 * can be calculated. Component metrics is individual for the given
-		 * component properties that has influence to the component preferred
-		 * size value. In many cases the properties calculation has to be
-		 * minimized what can be done by moving the calculation in "recalc"
-		 * method.
+		 * 	Causes this container to lay out its components.
 		 */
-		void recalculate();
+		void doLayout();
 
 		/**
 		 * Add the new children component to this flex container.

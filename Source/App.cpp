@@ -49,7 +49,7 @@ int main()
 	lastElement.setWidth(20.0f);
 	lastElement.setHeight( root.getHeight() * 1.0f );
 
-	root.recalculate();
+	root.doLayout();
 	root.printNode();
 
 	while (console.isRunning())
