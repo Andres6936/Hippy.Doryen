@@ -26,6 +26,17 @@ TEST_CASE("Verify the width and height of layout when is defined with parameters
 	CHECK(layoutable.isEmpty() == false);
 }
 
+TEST_CASE("Verify the change of width and height of layout when it are set for methods" * doctest::should_fail(true))
+{
+	Layoutable layoutable {};
+
+	layoutable.setWidth(80);
+	layoutable.setHeight(25);
+
+	CHECK(layoutable.getWidth() == 80);
+	CHECK(layoutable.getHeight() == 25);
+}
+
 TEST_CASE("Verify that a layout constructed by default has 0 children")
 {
 	Layoutable layoutable {};
