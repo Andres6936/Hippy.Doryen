@@ -143,6 +143,11 @@ float Layoutable::getAbsoluteLeft() const
 	}
 }
 
+std::uint8_t Layoutable::getChildren() const
+{
+	return children;
+}
+
 HPDirection Layoutable::getLayoutDirection() const
 {
 	return layout->result.direction;

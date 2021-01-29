@@ -91,6 +91,13 @@ namespace Hippy
 		 * already has a child and an attempt is made to insert the new child
 		 * at position 0, the children already in the flex container will be
 		 * moved one position to the right.
+		 *
+		 * This variable only define the total of children that has the current
+		 * flex container, the total of children in the hierarchy not will be
+		 * counted.
+		 *
+		 * The maximum possible number of children that each container may have
+		 * is 255 children (Integer of 8 bits).
 		 */
 		std::uint8_t children = 0;
 
@@ -260,6 +267,14 @@ namespace Hippy
 		 * of this flex container.
 		 */
 		float getAbsoluteLeft() const;
+
+		/**
+		 * @note (This method not count the total number of children throughout
+		 * the hierarchy).
+		 *
+		 * @return Get the total of children that this flex container has.
+		 */
+		std::uint8_t getChildren() const;
 
 		/**
 		 * @return Get the direction of layout for this flex container.
