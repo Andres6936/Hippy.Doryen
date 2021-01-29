@@ -19,5 +19,5 @@ TEST_CASE("Verify the direction layout for default of any flex container")
 {
 	Layoutable layoutable {};
 
-	CHECK(layoutable.getLayoutDirection() == HPDirection::DirectionLTR);
+	CHECK(layoutable.getLayoutDirection() == HPDirection::DirectionInherit);
 }

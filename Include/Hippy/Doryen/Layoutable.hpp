@@ -31,9 +31,9 @@ namespace Hippy
 	 * <br><br>
 	 *
 	 * For default the direction of layout for any flex container is left to
-	 * right, if need change the direction of layout use the function
-	 * setLayoutDirection. The values allow are LTR (Left to Right) and RTL
-	 * (Right to Left).
+	 * right (inheritance), if need change the direction of layout use the
+	 * function setLayoutDirection. The values allow are LTR (Left to Right)
+	 * and RTL (Right to Left).
 	 *
 	 * Flex layout is superficially similar to block layout. It lacks many of
 	 * the more complex text- or document-centric properties that can be used in
