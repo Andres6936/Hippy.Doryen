@@ -70,14 +70,14 @@ void Layoutable::setAlignItems(const FlexAlign align)
 	HPNodeStyleSetAlignItems(layout, align);
 }
 
-void Layoutable::setAssociativity(const HPDirection direction)
-{
-	HPNodeDoLayout(layout, VALUE_UNDEFINED, VALUE_UNDEFINED, direction);
-}
-
 void Layoutable::setFlexDirection(const FlexDirection direction)
 {
 	HPNodeStyleSetFlexDirection(layout, direction);
+}
+
+void Layoutable::setAssociativityOrder(const HPDirection direction)
+{
+	HPNodeDoLayout(layout, VALUE_UNDEFINED, VALUE_UNDEFINED, direction);
 }
 
 // Getters

@@ -60,11 +60,11 @@ int main()
 
 		if (key == KeyCode::ENTER)
 		{
-			root.setAssociativity(DirectionRTL);
+			root.setAssociativityOrder(DirectionRTL);
 		}
 		else if (key == KeyCode::SPACE)
 		{
-			root.setAssociativity(DirectionLTR);
+			root.setAssociativityOrder(DirectionLTR);
 		}
 
 		DrawNode(root, console, {127, 127, 127});
