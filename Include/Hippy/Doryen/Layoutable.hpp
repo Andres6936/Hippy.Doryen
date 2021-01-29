@@ -57,6 +57,10 @@ namespace Hippy
 
 		// Definitions
 
+		/**
+		 * Define a pointer to a element of same type {Layoutable} that takes
+		 * the role of the parent of the element.
+		 */
 		using LayoutableView = Layoutable*;
 
 	private:
