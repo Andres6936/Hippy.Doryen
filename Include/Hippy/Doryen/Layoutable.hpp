@@ -34,17 +34,17 @@ namespace Hippy
 	 * container defines, the first type of dimension define by the flex
 	 * container is the style, and the second type of dimension is the layout.
 	 * The second type of dimension is special, since the correct arrangement of
-	 * all the elements it contains (the children) depends on it.
+	 * all the elements it contains (the children) depends on it. <br><br>
 	 *
 	 * If not layout is configured throughout the entire hierarchy, the layout
 	 * will be inexistent and no matter if style have been defined, they will
 	 * not seen at all since is no way to apply styles to containers that do not
-	 * have a layout as a parent.
+	 * have a layout as a parent. <br><br>
 	 *
 	 * For default the direction of layout for any flex container is left to
 	 * right (inherit), if need change the direction of layout use the
 	 * function setLayoutDirection. The values allow are LTR (Left to Right)
-	 * and RTL (Right to Left).
+	 * and RTL (Right to Left). <br><br>
 	 *
 	 * Flex layout is superficially similar to block layout. It lacks many of
 	 * the more complex text- or document-centric properties that can be used in
