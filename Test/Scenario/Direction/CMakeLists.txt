@@ -1,0 +1,1 @@
+HIPPY_DORYEN_TEST_SCENARIO(Hippy.Doryen.Scenario.Direction DirectionScenario.cpp)
