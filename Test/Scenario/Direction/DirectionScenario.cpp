@@ -23,6 +23,7 @@ TEST_CASE("Verify the change of direction of layout.")
 		root.setFlexDirection(FLexDirectionRow);
 		root.setAlignItems(FlexAlignStart);
 
+		// Insert a child with 80% width and 100% of height
 		Layoutable child80 { &root };
 		child80.setWidth(root.getWidth() * 0.8f);
 		child80.setHeight(root.getHeight() * 1.0f);
@@ -32,8 +33,10 @@ TEST_CASE("Verify the change of direction of layout.")
 		CHECK(child80.getWidth() == 400);
 		CHECK(child80.getHeight() == 500);
 
+		// Verify the insertion of child
 		CHECK(root.getChildren() == 1);
 
+		// Insert a child with 20% width and 100% of height
 		Layoutable child20 { &root };
 		child20.setWidth(root.getWidth() * 0.2f);
 		child20.setHeight(root.getHeight() * 1.0f);
@@ -43,6 +46,7 @@ TEST_CASE("Verify the change of direction of layout.")
 		CHECK(child20.getWidth() == 100);
 		CHECK(child20.getHeight() == 500);
 
+		// Verify the insertion of child
 		CHECK(root.getChildren() == 2);
 	}
 }
