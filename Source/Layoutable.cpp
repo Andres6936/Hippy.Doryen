@@ -68,6 +68,11 @@ void Layoutable::setFlexDirection(const FlexDirection direction)
 	HPNodeStyleSetFlexDirection(layout, direction);
 }
 
+void Layoutable::setAssociativity(const HPDirection direction)
+{
+	HPNodeDoLayout(layout, VALUE_UNDEFINED, VALUE_UNDEFINED, direction);
+}
+
 // Getters
 
 float Layoutable::getTop()

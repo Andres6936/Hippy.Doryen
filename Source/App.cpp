@@ -60,13 +60,11 @@ int main()
 
 		if (key == KeyCode::ENTER)
 		{
-//			HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED, DirectionRTL);
-//			HPNodePrint(root);
+			root.setAssociativity(DirectionRTL);
 		}
 		else if (key == KeyCode::SPACE)
 		{
-//			HPNodeDoLayout(root, VALUE_UNDEFINED, VALUE_UNDEFINED, DirectionLTR);
-//			HPNodePrint(root);
+			root.setAssociativity(DirectionLTR);
 		}
 
 		DrawNode(root, console, {127, 127, 127});

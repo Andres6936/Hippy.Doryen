@@ -171,6 +171,14 @@ namespace Hippy
 		 */
 		void setFlexDirection(const FlexDirection direction);
 
+		/**
+		 * Set the associativity of left to right (LTR) or right to left (RTL)
+		 * of flex container.
+		 *
+		 * @param direction The associativity LTR or RTL of flex container.
+		 */
+		void setAssociativity(const HPDirection direction);
+
 		// Getters
 
 		float getTop();
