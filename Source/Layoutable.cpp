@@ -35,16 +35,16 @@ Layoutable::~Layoutable()
 
 // Methods
 
-void Layoutable::printNode()
-{
-	HPNodePrint(layout);
-}
-
 void Layoutable::doLayout()
 {
 	// The code layout->style.dim[0] store the style width of node.
 	// The code layout->style.dim[1] store the style height of node.
 	HPNodeDoLayout(layout, layout->style.dim[0], layout->style.dim[1], DirectionLTR);
+}
+
+void Layoutable::printNode()
+{
+	HPNodePrint(layout);
 }
 
 void Layoutable::addChild(const Layoutable& child)

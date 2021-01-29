@@ -160,14 +160,14 @@ namespace Hippy
 		// Methods
 
 		/**
-		 * Print the node in form of HTML element.
-		 */
-		void printNode();
-
-		/**
 		 * 	Causes this container to lay out its components.
 		 */
 		void doLayout();
+
+		/**
+		 * Print the node in form of HTML element.
+		 */
+		void printNode();
 
 		/**
 		 * Add the new children component to this flex container.
