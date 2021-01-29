@@ -18,6 +18,14 @@ namespace Hippy
 	 *
 	 * The definition of an empty flex container is whose width and height
 	 * is zero (0).
+	 *
+	 * For default this class use a flex layout model, the children of a flex
+	 * container can be laid out in any direction, and can “flex” their sizes,
+	 * either growing to fill unused space or shrinking to avoid overflowing the
+	 * parent. Both horizontal and vertical alignment of the children can be
+	 * easily manipulated. Nesting of these boxes (horizontal inside vertical,
+	 * or vertical inside horizontal) can be used to build layouts in two
+	 * dimensions.
 	 */
 	class Layoutable
 	{
