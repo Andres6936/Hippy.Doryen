@@ -6,8 +6,8 @@ using namespace Doryen;
 
 void DrawNode(Hippy::Frame& node, Console& console, const Color& background)
 {
-	const unsigned int leftCorner = node.getLeft();
-	const unsigned int topCorner = node.getTop();
+	const unsigned int leftCorner = node.getAbsoluteLeft();
+	const unsigned int topCorner = node.getAbsoluteTop();
 
 	const unsigned int widthRoot = node.getWidth();
 	const unsigned int heightRoot = node.getHeight();

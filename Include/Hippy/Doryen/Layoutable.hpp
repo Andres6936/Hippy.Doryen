@@ -196,6 +196,10 @@ namespace Hippy
 
 		float getHeight();
 
+		float getAbsoluteTop();
+
+		float getAbsoluteLeft();
+
 	};
 
 }

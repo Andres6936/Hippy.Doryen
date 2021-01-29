@@ -101,3 +101,27 @@ float Layoutable::getHeight()
 {
 	return HPNodeLayoutGetHeight(layout);
 }
+
+float Layoutable::getAbsoluteTop()
+{
+	if (parent not_eq nullptr)
+	{
+		return this->getTop() + parent->getAbsoluteTop();
+	}
+	else
+	{
+		return this->getTop();
+	}
+}
+
+float Layoutable::getAbsoluteLeft()
+{
+	if (parent not_eq nullptr)
+	{
+		return this->getLeft() + parent->getAbsoluteLeft();
+	}
+	else
+	{
+		return this->getLeft();
+	}
+}
