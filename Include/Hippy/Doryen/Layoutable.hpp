@@ -30,9 +30,9 @@ namespace Hippy
 	 * dimensions.
 	 * <br><br>
 	 *
-	 * For default the associativity order for any flex container is left to
-	 * right, if need change the order of associativity use the function
-	 * setAssociativityOrder. The values allow are LTR (Left to Right) and RTL
+	 * For default the direction of layout for any flex container is left to
+	 * right, if need change the direction of layout use the function
+	 * setLayoutDirection. The values allow are LTR (Left to Right) and RTL
 	 * (Right to Left).
 	 *
 	 * Flex layout is superficially similar to block layout. It lacks many of
@@ -194,16 +194,12 @@ namespace Hippy
 		void setFlexDirection(const FlexDirection direction);
 
 		/**
-		 * Set the associativity of left to right (LTR) or right to left (RTL)
-		 * of flex container.
+		 * Set the direction og layout of left to right (LTR) or right to left
+		 * (RTL) of flex container.
 		 *
-		 * The mean of associativity for this method is: The arrangement or
-		 * disposition of children container in relation to each other according
-		 * to a particular sequence or pattern.
-		 *
-		 * @param direction The associativity LTR or RTL of flex container.
+		 * @param direction The direction of layout, LTR or RTL of flex container.
 		 */
-		void setAssociativityOrder(const HPDirection direction);
+		void setLayoutDirection(const HPDirection direction);
 
 		// Getters
 
