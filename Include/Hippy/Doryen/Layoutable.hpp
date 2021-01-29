@@ -163,6 +163,14 @@ namespace Hippy
 		void setAlignItems(const FlexAlign align);
 
 		/**
+		 * Set the associativity of left to right (LTR) or right to left (RTL)
+		 * of flex container.
+		 *
+		 * @param direction The associativity LTR or RTL of flex container.
+		 */
+		void setAssociativity(const HPDirection direction);
+
+		/**
 		 * Set the direction that define how flex items are placed in the flex
 		 * container defining the main axis and the direction (normal or
 		 * reversed).
@@ -170,14 +178,6 @@ namespace Hippy
 		 * @param direction Sets how flex items are placed in the flex container.
 		 */
 		void setFlexDirection(const FlexDirection direction);
-
-		/**
-		 * Set the associativity of left to right (LTR) or right to left (RTL)
-		 * of flex container.
-		 *
-		 * @param direction The associativity LTR or RTL of flex container.
-		 */
-		void setAssociativity(const HPDirection direction);
 
 		// Getters
 
