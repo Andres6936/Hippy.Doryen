@@ -192,6 +192,10 @@ namespace Hippy
 		 * Set the associativity of left to right (LTR) or right to left (RTL)
 		 * of flex container.
 		 *
+		 * The mean of associativity for this method is: The arrangement or
+		 * disposition of children container in relation to each other according
+		 * to a particular sequence or pattern.
+		 *
 		 * @param direction The associativity LTR or RTL of flex container.
 		 */
 		void setAssociativityOrder(const HPDirection direction);
