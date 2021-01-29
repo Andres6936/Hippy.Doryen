@@ -211,35 +211,35 @@ namespace Hippy
 		 * @return Gets the y-coordinate relative to parent flex container (in
 		 * cells) of the top edge of this flex container.
 		 */
-		float getTop();
+		float getTop() const;
 
 		/**
 		 * @return Gets the x-coordinate relative to parent flex container (in
 		 * cells) of the left edge of this flex container.
 		 */
-		float getLeft();
+		float getLeft() const;
 
 		/**
 		 * @return Gets the width (in cells) of this flex container.
 		 */
-		float getWidth();
+		float getWidth() const;
 
 		/**
 		 * @return Gets the height (in cells) of this flex container.
 		 */
-		float getHeight();
+		float getHeight() const;
 
 		/**
 		 * @return Get the y-coordinate absolute (in cells) of the top edge of
 		 * this flex container.
 		 */
-		float getAbsoluteTop();
+		float getAbsoluteTop() const;
 
 		/**
 		 * @return Gets the x-coordinate absolute (in cells) of the left edge
 		 * of this flex container.
 		 */
-		float getAbsoluteLeft();
+		float getAbsoluteLeft() const;
 
 	};
 

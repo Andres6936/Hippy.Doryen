@@ -82,27 +82,27 @@ void Layoutable::setAssociativityOrder(const HPDirection direction)
 
 // Getters
 
-float Layoutable::getTop()
+float Layoutable::getTop() const
 {
 	return HPNodeLayoutGetTop(layout);
 }
 
-float Layoutable::getLeft()
+float Layoutable::getLeft() const
 {
 	return HPNodeLayoutGetLeft(layout);
 }
 
-float Layoutable::getWidth()
+float Layoutable::getWidth() const
 {
 	return HPNodeLayoutGetWidth(layout);
 }
 
-float Layoutable::getHeight()
+float Layoutable::getHeight() const
 {
 	return HPNodeLayoutGetHeight(layout);
 }
 
-float Layoutable::getAbsoluteTop()
+float Layoutable::getAbsoluteTop() const
 {
 	if (parent not_eq nullptr)
 	{
@@ -114,7 +114,7 @@ float Layoutable::getAbsoluteTop()
 	}
 }
 
-float Layoutable::getAbsoluteLeft()
+float Layoutable::getAbsoluteLeft() const
 {
 	if (parent not_eq nullptr)
 	{
