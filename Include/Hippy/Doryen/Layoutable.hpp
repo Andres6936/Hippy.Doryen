@@ -158,6 +158,13 @@ namespace Hippy
 		 */
 		void setAlignItems(const FlexAlign align);
 
+		/**
+		 * Set the direction that define how flex items are placed in the flex
+		 * container defining the main axis and the direction (normal or
+		 * reversed).
+		 *
+		 * @param direction Sets how flex items are placed in the flex container.
+		 */
 		void setFlexDirection(const FlexDirection direction);
 
 		// Getters
