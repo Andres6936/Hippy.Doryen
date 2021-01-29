@@ -46,11 +46,11 @@ TEST_CASE("Verify that a layout constructed by default has 0 children")
 
 TEST_CASE("Verify the successful insertion of children into flex container")
 {
-	Layoutable parent {};
-	Layoutable child { &parent};
+	std::shared_ptr<Layoutable> parent = std::make_shared<Layoutable>();
+	Layoutable child { parent};
 
 	CHECK(child.getChildren() == 0);
-	CHECK(parent.getChildren() == 1);
+	CHECK(parent->getChildren() == 1);
 }
 
 TEST_CASE("Verify the direction layout for default of any flex container")
