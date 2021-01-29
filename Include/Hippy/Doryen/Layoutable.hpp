@@ -48,7 +48,7 @@ namespace Hippy
 	 * 	- Can be aligned with respect to their container or each other on the
 	 * 	secondary (cross). <br>
 	 * 	- Can be dynamically collapsed or uncollapsed along the main axis while
-	 * 	preserving the container’s cross size. <br>
+	 * 	preserving the container’s cross size. <br><br>
 	 *
 	 * For default the flex model layout calculate the position of children
 	 * container relatives to parent flex container, this result in the need
