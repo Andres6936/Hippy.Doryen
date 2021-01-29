@@ -49,6 +49,16 @@ namespace Hippy
 	 * 	secondary (cross). <br>
 	 * 	- Can be dynamically collapsed or uncollapsed along the main axis while
 	 * 	preserving the container’s cross size. <br>
+	 *
+	 * For default the flex model layout calculate the position of children
+	 * container relatives to parent flex container, this result in the need
+	 * to transform these relatives measurements into absolute measurement,
+	 * which allow, among other things, the correct drawing of the child
+	 * containers. For get the coordinates relatives use the methods getTop,
+	 * getLeft, getRight and getBottom, for the absolute coordinates use the
+	 * methods getAbsoluteTop, getAbsoluteLeft, getAbsoluteRight and
+	 * getAbsoluteBottom.
+	 *
 	 */
 	class Layoutable
 	{
@@ -189,14 +199,14 @@ namespace Hippy
 		// Getters
 
 		/**
-		 * @return Gets the y-coordinate (in cells) of the top edge of this
-		 * flex container.
+		 * @return Gets the y-coordinate relative to parent flex container (in
+		 * cells) of the top edge of this flex container.
 		 */
 		float getTop();
 
 		/**
-		 * @return Gets the x-coordinate (in cells) of the left edge of this
-		 * flex container.
+		 * @return Gets the x-coordinate relative to parent flex container (in
+		 * cells) of the left edge of this flex container.
 		 */
 		float getLeft();
 
@@ -210,8 +220,16 @@ namespace Hippy
 		 */
 		float getHeight();
 
+		/**
+		 * @return Get the y-coordinate absolute (in cells) of the top edge of
+		 * this flex container.
+		 */
 		float getAbsoluteTop();
 
+		/**
+		 * @return Gets the x-coordinate absolute (in cells) of the left edge
+		 * of this flex container.
+		 */
 		float getAbsoluteLeft();
 
 	};
