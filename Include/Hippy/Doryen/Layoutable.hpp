@@ -103,14 +103,19 @@ namespace Hippy
 		// Construct
 
 		/**
-		 * Constructs a new instance with a flex container that is initially empty.
+		 * Construct a new instance flex container that is initially empty.
+		 */
+		Layoutable();
+
+		/**
+		 * Constructs a new instance flex container that is initially empty.
 		 *
 		 * @param parent The parent that content the object.
 		 */
 		Layoutable(const LayoutableView parent);
 
 		/**
-		 * Constructs a new instance with a flex container of dimensions {width x height}.
+		 * Constructs a new instance flex container of dimensions {width x height}.
 		 *
 		 * @param width The width of layout in cells.
 		 * @param height The height of layout in cells.
@@ -126,6 +131,9 @@ namespace Hippy
 
 		// Methods
 
+		/**
+		 * Print the node in form of HTML element.
+		 */
 		void printNode();
 
 		/**
@@ -148,6 +156,12 @@ namespace Hippy
 		 * @param child The new children component to be added.
 		 */
 		void addChild(const Layoutable& child);
+
+		/**
+		 * @return True if the flex container is empty (Its height and width
+		 * dimensions are both zero), false in otherwise.
+		 */
+		bool isEmpty() const;
 
 		// Setters
 

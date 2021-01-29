@@ -6,6 +6,12 @@ using namespace Hippy;
 
 // Construct
 
+Layoutable::Layoutable()
+{
+	HPNodeStyleSetWidth(layout, 0.0f);
+	HPNodeStyleSetHeight(layout, 0.0f);
+}
+
 Layoutable::Layoutable(const LayoutableView _parent) : parent(_parent)
 {
 	HPNodeInsertChild(parent->layout, this->layout, parent->totalsChildInserted);
@@ -46,6 +52,11 @@ void Layoutable::addChild(const Layoutable& child)
 	HPNodeInsertChild(layout, child.layout, totalsChildInserted);
 	// Increment the numbers of child inserted.
 	totalsChildInserted += 1;
+}
+
+bool Layoutable::isEmpty() const
+{
+	return getWidth() == 0 and getHeight() == 0;
 }
 
 // Setters
