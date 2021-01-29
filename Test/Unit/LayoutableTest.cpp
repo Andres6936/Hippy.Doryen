@@ -8,9 +8,16 @@
 
 using namespace Hippy;
 
-TEST_CASE("Verify the associativity order for default of any flex container")
+TEST_CASE("Verify if a layout constructed by default is empty")
 {
-	Layoutable layoutable {20, 20};
+	Layoutable layoutable {};
+
+	CHECK(layoutable.isEmpty() == true);
+}
+
+TEST_CASE("Verify the direction layout for default of any flex container")
+{
+	Layoutable layoutable {};
 
 	CHECK(layoutable.getLayoutDirection() == HPDirection::DirectionLTR);
 }
