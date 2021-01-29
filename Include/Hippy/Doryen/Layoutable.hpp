@@ -9,15 +9,15 @@ namespace Hippy
 {
 
 	/**
-	 * Layoutable class defines rectangular component that has elementary
-	 * metrical properties like width and height and can be a participant of
-	 * layout management process. Layoutable component is container that can
-	 * contains other layoutable component as its children. The children
-	 * components are ordered by applying a layout manager of its parent
-	 * component.
+	 * Layoutable class defines rectangular component (aka flex container) that
+	 * has elementary metrical properties like width and height and can be a
+	 * participant of layout management process. Layoutable component is
+	 * container that can contains other layoutable component as its children.
+	 * The children components are ordered by applying a layout manager of its
+	 * parent component.
 	 *
-	 * The definition of an empty Layoutable component is that whose width and
-	 * height is zero (0).
+	 * The definition of an empty flex container is whose width and height
+	 * is zero (0).
 	 */
 	class Layoutable
 	{
@@ -35,11 +35,17 @@ namespace Hippy
 		std::uint8_t totalsChildInserted = 0;
 
 		/**
-		 * Define the node Hippy, that calculate the disposition of itself and
-		 * child, the work of manage the Layout is responsibility of Hippy.
+		 * Define the node Hippy, it is the that calculate the disposition of
+		 * itself and of all child, the work of manage the flex container is
+		 * responsibility of Hippy.
 		 */
 		const HPNodeRef layout = HPNodeNew();
 
+		/**
+		 * The parent flex container of the this flex. If it is null, it
+		 * indicate that this container is responsible for calculating the
+		 * disposition for itself and all children recursively.
+		 */
 		const LayoutableView parent { nullptr};
 
 	public:
@@ -47,14 +53,14 @@ namespace Hippy
 		// Construct
 
 		/**
-		 * Constructs a new instance with a Layout that is initially empty.
+		 * Constructs a new instance with a flex container that is initially empty.
 		 *
 		 * @param parent The parent that content the object.
 		 */
 		Layoutable(const LayoutableView parent);
 
 		/**
-		 * Constructs a new instance with a Layout of dimensions {width x height}.
+		 * Constructs a new instance with a flex container of dimensions {width x height}.
 		 *
 		 * @param width The width of layout in cells.
 		 * @param height The height of layout in cells.
@@ -80,7 +86,7 @@ namespace Hippy
 		void recalculate();
 
 		/**
-		 * Add the new children component.
+		 * Add the new children component to it flex container.
 		 *
 		 * @param child The new children component to be added.
 		 */
@@ -88,10 +94,28 @@ namespace Hippy
 
 		// Setters
 
+		/**
+		 * Set the width of flex container in cells.
+		 *
+		 * @param width The width of Layout in cells.
+		 */
 		void setWidth(const float width);
 
+		/**
+		 * Set the height of flex container in cells.
+		 *
+		 * @param height The height of Layout in cells.
+		 */
 		void setHeight(const float height);
 
+		/**
+		 * Set the flex grow of element in the parent flex container.
+		 *
+		 * This property specifies how much of the remaining space in the flex
+		 * container should be assigned to the item (the flex grow factor).
+		 *
+		 * @param grow The flex grow. Negative values are invalid. Defaults to 0.
+		 */
 		void setFlexGrow(const float grow);
 
 		void setAlignItems(const FlexAlign align);
