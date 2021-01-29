@@ -117,7 +117,7 @@ namespace Hippy
 		void recalculate();
 
 		/**
-		 * Add the new children component to it flex container.
+		 * Add the new children component to this flex container.
 		 *
 		 * @param child The new children component to be added.
 		 */
@@ -149,6 +149,13 @@ namespace Hippy
 		 */
 		void setFlexGrow(const float grow);
 
+		/**
+		 * Set the align of children items as a group in this flex container.
+		 *
+		 * @param align Set the align-self value on all direct children as a
+		 * group. In Flexbox, it controls the alignment of items on the Cross
+		 * Axis.
+		 */
 		void setAlignItems(const FlexAlign align);
 
 		void setFlexDirection(const FlexDirection direction);
