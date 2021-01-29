@@ -117,10 +117,13 @@ float Layoutable::getAbsoluteTop() const
 {
 	if (parent not_eq nullptr)
 	{
+		// Calculate recursively the y-coordinate absolute (in cells) of the
+		// left edge of this flex container.
 		return this->getTop() + parent->getAbsoluteTop();
 	}
 	else
 	{
+		// Case base: The parent is null (aka. the flex container is the root).
 		return this->getTop();
 	}
 }
@@ -129,10 +132,13 @@ float Layoutable::getAbsoluteLeft() const
 {
 	if (parent not_eq nullptr)
 	{
+		// Calculate recursively the x-coordinate absolute (in cells) of the
+		// left edge of this flex container.
 		return this->getLeft() + parent->getAbsoluteLeft();
 	}
 	else
 	{
+		// Case base: The parent is null (aka. the flex container is the root).
 		return this->getLeft();
 	}
 }
