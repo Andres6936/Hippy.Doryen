@@ -32,9 +32,11 @@ SCENARIO("Verify the change of direction of layout.")
 
 		AND_WHEN("one child is inserted with 80% of width and 100% of height")
 		{
-			Layoutable child80 {root};
+			Layoutable child80 { &root };
 			child80.setWidth(root.getWidth() * 0.8f);
 			child80.setHeight(root.getHeight() * 1.0f);
+
+			root.doLayout();
 
 			CHECK(child80.getWidth() == 400);
 			CHECK(child80.getHeight() == 500);
@@ -47,9 +49,11 @@ SCENARIO("Verify the change of direction of layout.")
 
 		AND_WHEN("other child is inserted with 20% width and 100% height")
 		{
-			Layoutable child20 {root};
+			Layoutable child20 { &root };
 			child20.setWidth(root.getWidth() * 0.2f);
 			child20.setHeight(root.getHeight() * 1.0f);
+
+			root.doLayout();
 
 			CHECK(child20.getWidth() == 100);
 			CHECK(child20.getHeight() == 500);
@@ -57,7 +61,7 @@ SCENARIO("Verify the change of direction of layout.")
 
 		THEN("verify the insertion of child")
 		{
-			CHECK(root.getChildren() == 1);
+			CHECK(root.getChildren() == 2);
 		}
 	}
 }
