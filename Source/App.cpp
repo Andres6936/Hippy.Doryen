@@ -29,23 +29,23 @@ int main()
 	Console console {100, 100};
 	console.setFramePerSeconds(24);
 
-	std::shared_ptr<Hippy::Frame> root = std::make_shared<Hippy::Frame>(100, 100);
+	auto root = std::make_shared<Hippy::Frame>(100, 100);
 	root->setFlexDirection(FLexDirectionRow);
 	root->setAlignItems(FlexAlignStart);
 
-	std::shared_ptr<Hippy::Frame> wrapper = std::make_shared<Hippy::Frame>( root );
+	auto wrapper = std::make_shared<Hippy::Frame>( root );
 	wrapper->setWidth(80);
 	wrapper->setHeight(root->getHeight() * 1.0f);
 
-	std::shared_ptr<Hippy::Frame> root_child1 = std::make_shared<Hippy::Frame>( wrapper );
+	auto root_child1 = std::make_shared<Hippy::Frame>( wrapper );
 	root_child1->setWidth(80.f);
 	root_child1->setFlexGrow(1.0f);
 
-	std::shared_ptr<Hippy::Frame> root_child2 = std::make_shared<Hippy::Frame> (wrapper );
+	auto root_child2 = std::make_shared<Hippy::Frame> (wrapper );
 	root_child2->setWidth(80.0f);
 	root_child2->setFlexGrow(1.0f);
 
-	std::shared_ptr<Hippy::Frame> lastElement = std::make_shared<Hippy::Frame> (root );
+	auto lastElement = std::make_shared<Hippy::Frame> (root );
 	lastElement->setWidth(20.0f);
 	lastElement->setHeight( root->getHeight() * 1.0f );
 
