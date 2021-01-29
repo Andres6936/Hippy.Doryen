@@ -82,7 +82,17 @@ namespace Hippy
 
 		// Properties
 
-		std::uint8_t totalsChildInserted = 0;
+		/**
+		 * Define the total of children that has the flex container. In
+		 * addition, define the order of insertion of the children inside the
+		 * flex container. If the value of the variable is 0 (parent has not a
+		 * children yet), the possible child to be inserted will be inserted in
+		 * the first position of array. If on the other hand the flex container
+		 * already has a child and an attempt is made to insert the new child
+		 * at position 0, the children already in the flex container will be
+		 * moved one position to the right.
+		 */
+		std::uint8_t children = 0;
 
 		/**
 		 * Define the node Hippy, it is the that calculate the disposition of

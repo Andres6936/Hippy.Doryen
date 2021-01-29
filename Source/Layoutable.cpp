@@ -14,9 +14,9 @@ Layoutable::Layoutable()
 
 Layoutable::Layoutable(const LayoutableView _parent) : parent(_parent)
 {
-	HPNodeInsertChild(parent->layout, this->layout, parent->totalsChildInserted);
+	HPNodeInsertChild(parent->layout, this->layout, parent->children);
 	// Increment the numbers of child inserted.
-	parent->totalsChildInserted += 1;
+	parent->children += 1;
 }
 
 Layoutable::Layoutable(const float width, const float height)
@@ -49,9 +49,9 @@ void Layoutable::recalculate()
 
 void Layoutable::addChild(const Layoutable& child)
 {
-	HPNodeInsertChild(layout, child.layout, totalsChildInserted);
+	HPNodeInsertChild(layout, child.layout, children);
 	// Increment the numbers of child inserted.
-	totalsChildInserted += 1;
+	children += 1;
 }
 
 bool Layoutable::isEmpty() const
