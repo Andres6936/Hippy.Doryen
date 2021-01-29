@@ -15,9 +15,11 @@ namespace Hippy
 	 * container that can contains other layoutable component as its children.
 	 * The children components are ordered by applying a layout manager of its
 	 * parent component.
+	 * <br><br>
 	 *
 	 * The definition of an empty flex container is whose width and height
 	 * is zero (0).
+	 * <br><br>
 	 *
 	 * For default this class use a flex layout model, the children of a flex
 	 * container can be laid out in any direction, and can “flex” their sizes,
@@ -26,6 +28,27 @@ namespace Hippy
 	 * easily manipulated. Nesting of these boxes (horizontal inside vertical,
 	 * or vertical inside horizontal) can be used to build layouts in two
 	 * dimensions.
+	 * <br><br>
+	 *
+	 * Flex layout is superficially similar to block layout. It lacks many of
+	 * the more complex text- or document-centric properties that can be used in
+	 * block layout, such as floats and columns. In return it gains simple and
+	 * powerful tools for distributing space and aligning content in ways that
+	 * web apps and complex web pages often need.
+	 * The contents of a flex container:
+	 * <br><br>
+	 *
+	 * 	- Can be laid out in any flow direction (leftwards, rightwards,
+	 * 	downwards, or even upwards!). <br>
+	 * 	- Can have their display order reversed or rearranged at the style layer
+	 * 	(i.e., visual order can be independent of source and speech order). <br>
+	 * 	- Can be laid out linearly along a single (main) axis or wrapped into
+	 * 	multiple lines along a secondary (cross) axis. <br>
+	 * 	- Can “flex” their sizes to respond to the available space. <br>
+	 * 	- Can be aligned with respect to their container or each other on the
+	 * 	secondary (cross). <br>
+	 * 	- Can be dynamically collapsed or uncollapsed along the main axis while
+	 * 	preserving the container’s cross size. <br>
 	 */
 	class Layoutable
 	{
