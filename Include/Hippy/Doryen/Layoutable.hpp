@@ -121,7 +121,7 @@ namespace Hippy
 		 *
 		 * @param child The new children component to be added.
 		 */
-		void insertChild(const Layoutable& child);
+		void addChild(const Layoutable& child);
 
 		// Setters
 

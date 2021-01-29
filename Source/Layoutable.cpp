@@ -34,7 +34,7 @@ void Layoutable::recalculate()
 	HPNodeDoLayout(layout, layout->style.dim[0], layout->style.dim[1], DirectionLTR);
 }
 
-void Layoutable::insertChild(const Layoutable& child)
+void Layoutable::addChild(const Layoutable& child)
 {
 	HPNodeInsertChild(layout, child.layout, totalsChildInserted);
 	// Increment the numbers of child inserted.
