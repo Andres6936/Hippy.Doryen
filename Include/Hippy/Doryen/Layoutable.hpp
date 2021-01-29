@@ -30,6 +30,11 @@ namespace Hippy
 	 * dimensions.
 	 * <br><br>
 	 *
+	 * For default the associativity order for any flex container is left to
+	 * right, if need change the order of associativity use the function
+	 * setAssociativityOrder. The values allow are LTR (Left to Right) and RTL
+	 * (Right to Left).
+	 *
 	 * Flex layout is superficially similar to block layout. It lacks many of
 	 * the more complex text- or document-centric properties that can be used in
 	 * block layout, such as floats and columns. In return it gains simple and
