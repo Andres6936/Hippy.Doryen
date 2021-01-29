@@ -20,6 +20,13 @@ Layoutable::Layoutable(const float width, const float height)
 	HPNodeDoLayout(layout, width, height, DirectionLTR);
 }
 
+// Destructor
+
+Layoutable::~Layoutable()
+{
+	HPNodeFree(layout);
+}
+
 // Methods
 
 void Layoutable::printNode()

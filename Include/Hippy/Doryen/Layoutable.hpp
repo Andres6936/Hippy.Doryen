@@ -102,6 +102,13 @@ namespace Hippy
 		 */
 		Layoutable(const float width, const float height);
 
+		// Destructor
+
+		/**
+		 * Responsible of destroy the instance of Hippy flex layout model.
+		 */
+		virtual ~Layoutable();
+
 		// Methods
 
 		void printNode();
