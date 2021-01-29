@@ -237,6 +237,11 @@ namespace Hippy
 		 */
 		float getAbsoluteLeft() const;
 
+		/**
+		 * @return Get the direction of layout for this flex container.
+		 */
+		HPDirection getLayoutDirection() const;
+
 	};
 
 }

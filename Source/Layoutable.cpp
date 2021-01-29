@@ -125,3 +125,8 @@ float Layoutable::getAbsoluteLeft() const
 		return this->getLeft();
 	}
 }
+
+HPDirection Layoutable::getLayoutDirection() const
+{
+	return layout->result.direction;
+}
