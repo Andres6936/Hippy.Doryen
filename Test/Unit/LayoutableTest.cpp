@@ -17,6 +17,15 @@ TEST_CASE("Verify if a layout constructed by default is empty")
 	CHECK(layoutable.isEmpty() == true);
 }
 
+TEST_CASE("Verify the width and height of layout when is defined with parameters")
+{
+	Layoutable layoutable {80, 25};
+
+	CHECK(layoutable.getWidth() == 80);
+	CHECK(layoutable.getHeight() == 25);
+	CHECK(layoutable.isEmpty() == false);
+}
+
 TEST_CASE("Verify that a layout constructed by default has 0 children")
 {
 	Layoutable layoutable {};
