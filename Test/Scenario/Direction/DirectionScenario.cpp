@@ -36,6 +36,21 @@ TEST_CASE("Verify the change of direction of layout.")
 		// Verify the insertion of child
 		CHECK(root.getChildren() == 1);
 
+		{
+			Layoutable frameOne {&child80};
+			frameOne.setFlexGrow(1.0f);
+			frameOne.setWidth(child80.getWidth() * 1.0f);
+
+			root.doLayout();
+
+			Layoutable frameTwo {&child80};
+			frameTwo.setFlexGrow(1.0f);
+			frameTwo.setWidth(child80.getWidth() * 1.0f);
+
+			root.doLayout();
+		}
+
+
 		// Insert a child with 20% width and 100% of height
 		Layoutable child20 { &root };
 		child20.setWidth(root.getWidth() * 0.2f);
