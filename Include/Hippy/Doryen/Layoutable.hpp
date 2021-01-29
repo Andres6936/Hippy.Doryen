@@ -188,12 +188,26 @@ namespace Hippy
 
 		// Getters
 
+		/**
+		 * @return Gets the y-coordinate (in cells) of the top edge of this
+		 * flex container.
+		 */
 		float getTop();
 
+		/**
+		 * @return Gets the x-coordinate (in cells) of the left edge of this
+		 * flex container.
+		 */
 		float getLeft();
 
+		/**
+		 * @return Gets the width (in cells) of this flex container.
+		 */
 		float getWidth();
 
+		/**
+		 * @return Gets the height (in cells) of this flex container.
+		 */
 		float getHeight();
 
 		float getAbsoluteTop();
