@@ -17,6 +17,13 @@ TEST_CASE("Verify if a layout constructed by default is empty")
 	CHECK(layoutable.isEmpty() == true);
 }
 
+TEST_CASE("Verify that a layout constructed by default has 0 children")
+{
+	Layoutable layoutable {};
+
+	CHECK(layoutable.getChildren() == 0);
+}
+
 TEST_CASE("Verify the direction layout for default of any flex container")
 {
 	Layoutable layoutable {};
