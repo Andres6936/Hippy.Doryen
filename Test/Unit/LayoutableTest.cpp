@@ -12,6 +12,8 @@ TEST_CASE("Verify if a layout constructed by default is empty")
 {
 	Layoutable layoutable {};
 
+	CHECK(layoutable.getWidth() == 0);
+	CHECK(layoutable.getHeight() == 0);
 	CHECK(layoutable.isEmpty() == true);
 }
 
