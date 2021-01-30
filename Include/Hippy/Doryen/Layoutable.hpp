@@ -3,6 +3,7 @@
 #ifndef HIPPY_DORYEN_WIDGET_HPP
 #define HIPPY_DORYEN_WIDGET_HPP
 
+#include <memory>
 #include <Hippy/Flex/Hippy.h>
 
 namespace Hippy
@@ -87,7 +88,7 @@ namespace Hippy
 		 * Define a pointer to a element of same type {Layoutable} that takes
 		 * the role of the parent of the element.
 		 */
-		using LayoutableView = Layoutable*;
+		using LayoutableView = std::shared_ptr<Layoutable>;
 
 	private:
 
