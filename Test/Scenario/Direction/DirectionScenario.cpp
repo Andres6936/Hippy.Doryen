@@ -43,11 +43,23 @@ TEST_CASE("Verify the change of direction of layout.")
 
 			root.doLayout();
 
+			// Verify the insertion of child
+			CHECK(child80.getChildren() == 1);
+
 			Layoutable frameTwo {&child80};
 			frameTwo.setFlexGrow(1.0f);
 			frameTwo.setWidth(child80.getWidth() * 1.0f);
 
 			root.doLayout();
+
+			// Verify the insertion of child
+			CHECK(child80.getChildren() == 2);
+
+			CHECK(frameOne.getWidth() == 400);
+			CHECK(frameOne.getHeight() == 250);
+
+			CHECK(frameTwo.getWidth() == 400);
+			CHECK(frameTwo.getHeight() == 250);
 		}
 
 
