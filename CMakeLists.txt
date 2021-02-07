@@ -5,11 +5,15 @@ INCLUDE(CMakeModules/CPM.cmake)
 
 CPMAddPackage(
         NAME Doryen
-        VERSION 2021.0124
+        VERSION 2021.0131
         GITHUB_REPOSITORY Andres6936/Doryen
 )
 
-ADD_SUBDIRECTORY(Dependency/Hippy.Layout)
+CPMAddPackage(
+        NAME HippyFlex
+        VERSION 2021.0108
+        GITHUB_REPOSITORY Andres6936/Hippy.Flex
+)
 
 #[[ This sets an header-only project.
 
